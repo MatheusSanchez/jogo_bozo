@@ -1,19 +1,25 @@
 
-
 public class Placar {
 	int tabuleiro[] = new int[10];
 	
-	public void add(int posicao, int dados[]) {
+	public void add(int posicao, int dados[]) throws java.lang.IllegalArgumentException{
 		int j, soma = 0;
-		if(posicao < 6) {
-			for(j = 0; j < 5; j++) {
-				if(dados[j] == posicao) soma += dados[j];
+			
+		try{
+			if(tabuleiro[posicao -1] == 0) {
+				if(posicao < 6) {
+					for(j = 0; j < 5; j++) {
+						if(dados[j] == posicao) soma += dados[j];
+					}
+				}else if(posicao == 6) soma += 15; 
+				else if(posicao == 7) soma += 20;
+				else if(posicao == 8) soma += 30;
+				else if(posicao == 9) soma += 40;
+				tabuleiro[posicao - 1] = soma;
 			}
-		}else if(posicao == 6) soma += 15; 
-		else if(posicao == 7) soma += 20;
-		else if(posicao == 8) soma += 30;
-		else if(posicao == 9) soma += 40;
-		tabuleiro[posicao - 1] = soma;
+		}catch(java.lang.IllegalArgumentException e) {
+			return;
+		}
 	}
 	
 	public int getScore(){
