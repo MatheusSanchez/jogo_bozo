@@ -8,6 +8,7 @@ public class Dado {
 	
 	public Dado() {
 		this.Numerolados = 6;
+		this.face = 0;
 	}
 	
 	public Dado(int k) {
@@ -41,37 +42,37 @@ public class Dado {
 						"|     |    \r\n" + 
 						"|  *  |    \r\n" + 
 						"|     |    \r\n" + 
-						"+-----+";
+						"+-----+    ";
 		}else if(this.face == 2) {
 			resultado = "+-----+    \r\n" + 
 						"|*    |    \r\n" + 
 						"|     |    \r\n" + 
 						"|    *|    \r\n" + 
-						"+-----+";
+						"+-----+    ";
 		}else if(this.face == 3) {
 			resultado = "+-----+    \r\n" + 
 						"|*    |    \r\n" + 
 						"|  *  |    \r\n" + 
 						"|    *|    \r\n" + 
-						"+-----+";
+						"+-----+    ";
 		}else if(this.face == 4) {
 			resultado = "+-----+    \r\n" + 
 						"|*   *|    \r\n" + 
 						"|     |    \r\n" + 
 						"|*   *|    \r\n" + 
-						"+-----+";
+						"+-----+    ";
 		}else if(this.face == 5) {
 			resultado = "+-----+    \r\n" + 
 						"|*   *|    \r\n" + 
 						"|  *  |    \r\n" + 
 						"|*   *|    \r\n" + 
-						"+-----+";
+						"+-----+    ";
 		}else if(this.face == 6) {
 			resultado = "+-----+    \r\n" + 
 						"|* * *|    \r\n" + 
 						"|     |    \r\n" + 
 						"|* * *|    \r\n" + 
-						"+-----+";
+						"+-----+    ";
 		}
 		
 		return resultado;
