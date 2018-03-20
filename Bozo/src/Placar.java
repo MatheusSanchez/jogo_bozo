@@ -12,7 +12,7 @@ public class Placar {
 		else if(posicao == 7) soma += 20;
 		else if(posicao == 8) soma += 30;
 		else if(posicao == 9) soma += 40;
-		tabuleiro[posicao] = soma;
+		tabuleiro[posicao - 1] = soma;
 	}
 	
 	public int getScore(){
@@ -27,14 +27,14 @@ public class Placar {
 	@Override 
 	public String toString(){
 		if(tabuleiro[0] == 0) System.out.print("  (1)  |");
-		else System.out.print("  " + tabuleiro[0] + "   |");
+		else System.out.print("   " + tabuleiro[0] + "   |");
 		if(tabuleiro[6] == 0) System.out.print("  (7)  |");
 		else System.out.print("  " + tabuleiro[6] + "   |");
 		if(tabuleiro[3] == 0) System.out.println("  (4)  |");
 		else System.out.println("  " + tabuleiro[3] + "   |");
 		System.out.print("------------------------\n");
 		if(tabuleiro[1] == 0) System.out.print("  (2)  |");
-		else System.out.print("  " + tabuleiro[1] + "   |");
+		else System.out.print("   " + tabuleiro[1] + "   |");
 		if(tabuleiro[7] == 0) System.out.print("  (8)  |");
 		else System.out.print("  " + tabuleiro[7] + "   |");
 		if(tabuleiro[4] == 0) System.out.println("  (5)  |");

@@ -18,7 +18,7 @@ public class Bozo {
 		}
 		
 		
-		placar.add(4, dados);
+		placar.add(3, dados);
 		placar.toString();
 	}
 
