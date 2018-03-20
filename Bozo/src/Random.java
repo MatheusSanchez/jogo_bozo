@@ -1,4 +1,4 @@
-package Bozo;
+
 import java.util.Calendar;
 
 public class Random {

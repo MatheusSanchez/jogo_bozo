@@ -1,4 +1,4 @@
-package Bozo;
+
 
 public class Dado {
 	

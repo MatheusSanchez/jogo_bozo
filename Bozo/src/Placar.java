@@ -1,4 +1,4 @@
-package Bozo;
+
 
 public class Placar {
 	int tabuleiro[] = new int[10];
