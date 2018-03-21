@@ -68,15 +68,20 @@ public class RolaDados {
 
 		}
 		
+		
+		
+		// concatenando a string de retorno
+		strDado = "";
+		
 		for(int i = 0; i < 5 ;i++) {
 			for(int j = 0; j < this.nDados ;j++) {
-				System.out.print(vetStrDado[j][i]);
+				strDado += vetStrDado[j][i];
 			}
-			System.out.println();
+			strDado += '\n';
 		}
 
 		return strDado;
-		// funcionando para qualquer numero de dados
+		
 	}
 	
 }

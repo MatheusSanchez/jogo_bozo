@@ -7,12 +7,22 @@ public class Bozo {
 		RolaDados dados = new RolaDados(10);
 		int valores[] = new int[10];
 		
-		valores = dados.rolar();
+		dados.rolar();
+		String s = dados.toString();
+		System.out.println(s);
 		
-		for (int i = 0; i < valores.length; i++) {
-			System.out.println(valores[i]);
-		}
-		dados.toString();
+		boolean[] quais = new boolean[10];
+		quais[0] = true;
+		quais[1] = true;
+		dados.rolar(quais);
+		
+		s = dados.toString();
+		System.out.println(s);
+		
+		
+		
+	
+		
 		
 	}
 
