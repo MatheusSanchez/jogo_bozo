@@ -11,11 +11,7 @@ public class Random {
 
 
 	public double getRand() {
-	
-		xi = (a + m * xi) % p;
-	
-		double d = xi;
-		return (d / p);
+		return Math.random();
 	}
 	
 	public int getIntRand(int max){

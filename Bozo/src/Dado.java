@@ -38,40 +38,40 @@ public class Dado {
 		String resultado = new String();
 		
 		if(this.face == 1) {
-			resultado = "+-----+    \r\n" + 
-						"|     |    \r\n" + 
-						"|  *  |    \r\n" + 
-						"|     |    \r\n" + 
+			resultado = "+-----+    \n" + 
+						"|     |    \n" + 
+						"|  *  |    \n" + 
+						"|     |    \n" + 
 						"+-----+    ";
 		}else if(this.face == 2) {
-			resultado = "+-----+    \r\n" + 
-						"|*    |    \r\n" + 
-						"|     |    \r\n" + 
-						"|    *|    \r\n" + 
+			resultado = "+-----+    \n" + 
+						"|*    |    \n" + 
+						"|     |    \n" + 
+						"|    *|    \n" + 
 						"+-----+    ";
 		}else if(this.face == 3) {
-			resultado = "+-----+    \r\n" + 
-						"|*    |    \r\n" + 
-						"|  *  |    \r\n" + 
-						"|    *|    \r\n" + 
+			resultado = "+-----+    \n" + 
+						"|*    |    \n" + 
+						"|  *  |    \n" + 
+						"|    *|    \n" + 
 						"+-----+    ";
 		}else if(this.face == 4) {
-			resultado = "+-----+    \r\n" + 
-						"|*   *|    \r\n" + 
-						"|     |    \r\n" + 
-						"|*   *|    \r\n" + 
+			resultado = "+-----+    \n" + 
+						"|*   *|    \n" + 
+						"|     |    \n" + 
+						"|*   *|    \n" + 
 						"+-----+    ";
 		}else if(this.face == 5) {
-			resultado = "+-----+    \r\n" + 
-						"|*   *|    \r\n" + 
-						"|  *  |    \r\n" + 
-						"|*   *|    \r\n" + 
+			resultado = "+-----+    \n" + 
+						"|*   *|    \n" + 
+						"|  *  |    \n" + 
+						"|*   *|    \n" + 
 						"+-----+    ";
 		}else if(this.face == 6) {
-			resultado = "+-----+    \r\n" + 
-						"|* * *|    \r\n" + 
-						"|     |    \r\n" + 
-						"|* * *|    \r\n" + 
+			resultado = "+-----+    \n" + 
+						"|* * *|    \n" + 
+						"|     |    \n" + 
+						"|* * *|    \n" + 
 						"+-----+    ";
 		}
 		

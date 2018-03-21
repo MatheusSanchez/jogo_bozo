@@ -7,13 +7,17 @@ public class RolaDados {
 	public RolaDados(int nDados) {
 		this.nDados = nDados;
 		this.vetDados = new Dado[nDados];
-		
+		for(int i = 0; i < this.nDados; i++) {
+			vetDados[i] = new Dado();
+		}
 	}
 	
 	public int[] rolar() {
-		int retornoDados[] = new int[5];
+		
+		int retornoDados[] = new int[this.nDados];
 		
 		for(int i = 0; i < this.nDados; i++) {
+			
 			retornoDados[i] = this.vetDados[i].rolar();
 		}	
 		
@@ -56,18 +60,23 @@ public class RolaDados {
 		
 		String strDado = new String();
 		String vetStrDado[][] = new String[this.nDados][5];
-		
+		//System.out.print("Cheguei no roel");
 		for(int i = 0; i < this.nDados ;i++) {
 			
 			strDado = vetDados[i].toString();
 			vetStrDado[i] = strDado.split("\n");
-			System.out.println(vetStrDado[i]);
-			
+
 		}
 		
+		for(int i = 0; i < 5 ;i++) {
+			for(int j = 0; j < this.nDados ;j++) {
+				System.out.print(vetStrDado[j][i]);
+			}
+			System.out.println();
+		}
 
 		return strDado;
-		
+		// funcionando para qualquer numero de dados
 	}
 	
 }
