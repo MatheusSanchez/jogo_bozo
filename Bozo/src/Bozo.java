@@ -1,27 +1,50 @@
-
+import java.io.IOException;
 
 public class Bozo {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
-		RolaDados dados = new RolaDados(10);
-		int valores[] = new int[10];
+		int rodada = 0;
+		Placar placar = new Placar();
+		RolaDados dados = new RolaDados(5);
+		int pontDados[] = new int[5];
 		
-		dados.rolar();
-		String s = dados.toString();
-		System.out.println(s);
+		String troca = new String();
+		int addPlacar;
 		
-		boolean[] quais = new boolean[10];
-		quais[0] = true;
-		quais[1] = true;
-		dados.rolar(quais);
+		while(rodada < 10) {
+			System.out.println(placar.toString());
+			System.out.println("****** Rodada " + (rodada + 1));
+			System.out.println("Pressione ENTER para lançar os dados");
+			EntradaTeclado.leString();
+			
+			pontDados = dados.rolar();
+			System.out.println(dados.toString());
+			
+			for (int i = 0; i < 2; i++) {
+				System.out.println("Digite os números dos dados que quiser TROCAR. Separados por espaços.");
+				troca = "";
+				troca = EntradaTeclado.leString();
+				
+				if(!(troca.isEmpty() )) {
+					pontDados = dados.rolar(troca);
+					System.out.println(dados.toString());
+				}else {
+					System.out.println(dados.toString());
+				}
+				
+			}
+			
+			System.out.println(placar.toString());
+			System.out.print("Escolha a posição que quer ocupar com essa jogada ===> ");
+			addPlacar = EntradaTeclado.leInt();
+			
+			placar.add(addPlacar, pontDados);
+			System.out.println(placar.toString());
+			System.out.println("Fim Da Rodada " + (rodada + 1));
+			rodada++;
+		}
 		
-		s = dados.toString();
-		System.out.println(s);
-		
-		
-		
-	
 		
 		
 	}

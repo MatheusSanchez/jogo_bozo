@@ -26,12 +26,15 @@ public class RolaDados {
 	
 	public int[] rolar(boolean[] quais) {
 		
-		int retornoDados[] = new int[5];
+		int retornoDados[] = new int[this.nDados];
 		
-		for(int i = 0; i < nDados; i++) {
-			if(quais[i]){
+		for(int i = 0; i < this.nDados; i++) {
+			
+			retornoDados[i] = this.vetDados[i].getFace();
+			if(quais[i] ==  true){
 				retornoDados[i] = this.vetDados[i].rolar();
-			}	
+			}
+			
 		}	
 		
 		return retornoDados;
@@ -48,7 +51,8 @@ public class RolaDados {
 		s = s.replaceAll(" ","");
 		
 		for(int i = 0; i < s.length() ;i++) {
-			quais[(int)(s.charAt(i))] = true;
+			
+			quais[(s.charAt(i)) - 49] = true;
 		}
 		
 		

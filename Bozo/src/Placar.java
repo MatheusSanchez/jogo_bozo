@@ -1,23 +1,51 @@
+import java.io.IOException;
 
 public class Placar {
 	int tabuleiro[] = new int[10];
 	
-	public void add(int posicao, int dados[]) throws java.lang.IllegalArgumentException{
+	public Placar(){
+	
+		for(int i = 0; i < 10; i++) {
+			tabuleiro[i] = -1;
+		}
+	}
+	
+	public void add(int posicao, int dados[]) throws java.lang.IllegalArgumentException, IOException{
+		posicao--;
 		int j, soma = 0;
+		for (int i = 0; i < dados.length; i++) {
+			System.out.println("Dado "+ i + " = " + dados[i]);
+
+		}
 			
 		try{
-			if(tabuleiro[posicao -1] == 0) {
+			if(this.tabuleiro[posicao] == -1) { // posições não ocupadas
+				
 				if(posicao < 6) {
-					for(j = 0; j < 5; j++) {
-						if(dados[j] == posicao) soma += dados[j];
+					for(j = 0; j < dados.length; j++) {	
+						if(dados[j] == posicao + 1)
+							soma += dados[j];					
 					}
-				}else if(posicao == 6) soma += 15; 
-				else if(posicao == 7) soma += 20;
-				else if(posicao == 8) soma += 30;
-				else if(posicao == 9) soma += 40;
-				tabuleiro[posicao - 1] = soma;
+					
+					tabuleiro[posicao] += soma;
+				}else if(posicao < 10){
+					System.out.println("DAora fera");
+					tabuleiro[posicao] += soma;
+				}else{
+					System.out.println("Esta posição não existe no tabuleiro !");
+					System.out.println("Digite uma posição valida !");
+					throw new IllegalArgumentException();
+				}
+				
+			}else {
+				System.out.println("Esta posição ja esta ocupada, lamento !");
+				System.out.println("Digite uma posição vazia !");
+				throw new IllegalArgumentException();
 			}
+			
 		}catch(java.lang.IllegalArgumentException e) {
+			posicao = EntradaTeclado.leInt();
+			this.add(posicao,dados);
 			return;
 		}
 	}
@@ -32,38 +60,25 @@ public class Placar {
 	}
 	
 	@Override 
-	public String toString(){
-		if(tabuleiro[0] == 0) System.out.print("  (1)  |");
-		else System.out.print("   " + tabuleiro[0] + "   |");
-		if(tabuleiro[6] == 0) System.out.print("  (7)  |");
-		else System.out.print("  " + tabuleiro[6] + "   |");
-		if(tabuleiro[3] == 0) System.out.println("  (4)  |");
-		else System.out.println("  " + tabuleiro[3] + "   |");
-		System.out.print("------------------------\n");
-		if(tabuleiro[1] == 0) System.out.print("  (2)  |");
-		else System.out.print("   " + tabuleiro[1] + "   |");
-		if(tabuleiro[7] == 0) System.out.print("  (8)  |");
-		else System.out.print("  " + tabuleiro[7] + "   |");
-		if(tabuleiro[4] == 0) System.out.println("  (5)  |");
-		else System.out.println("  " + tabuleiro[4] + "   |");
-		System.out.print("------------------------\n");
-		if(tabuleiro[2] == 0) System.out.print("  (3)  |");
-		else System.out.print("  " + tabuleiro[2] + "   |");
-		if(tabuleiro[8] == 0) System.out.print("  (9)  |");
-		else System.out.print("  " + tabuleiro[8] + "   |");
-		if(tabuleiro[5] == 0) System.out.println("  (6)  |");
-		else System.out.println("  " + tabuleiro[5] + "   |");
-		System.out.print("------------------------\n");
-		if(tabuleiro[9] == 0) System.out.println("       |  (10) |         ");
-		else System.out.println("       |"  + "  " + tabuleiro[9] + "   " +  "|   ");
-		System.out.print("       x-------x        \n");
-		return null;
+	public java.lang.String toString(){
+		
+		String resul = new String();
+		
+		resul = " "+tabuleiro[0]+"   |   "+tabuleiro[6]+"    |   "+tabuleiro[3]+" \n" + 
+				" --------------------------\n" + 
+				" "+tabuleiro[1]+"   |   "+tabuleiro[7]+"    |   "+tabuleiro[4]+" \n" + 
+				" -------------------------- \n" + 
+				" "+tabuleiro[2]+"   |   "+tabuleiro[8]+"    |   "+tabuleiro[5]+" \n" + 
+				"-------------------------- \n" + 
+				"        |   "+tabuleiro[8]+"   | \n" + 
+				"        +----------+ ";
+		
+	
+		
+		
+			
+		return resul;
 	}
 	
-	public Placar(){
-		int i;
-		for(i = 0; i < 10; i++) {
-			tabuleiro[i] = 0;
-		}
-	}
+	
 }
