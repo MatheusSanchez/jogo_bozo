@@ -16,10 +16,11 @@ public class RolaDados {
 		
 		int retornoDados[] = new int[this.nDados];
 		
+		
 		for(int i = 0; i < this.nDados; i++) {
 			
 			retornoDados[i] = this.vetDados[i].rolar();
-		}	
+		}
 		
 		return retornoDados;
 	}

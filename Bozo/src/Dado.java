@@ -3,7 +3,7 @@
 public class Dado {
 	
 	private int Numerolados;
-	private int face;
+	private int face; // face para cima do dado
 	
 	
 	public Dado() {
@@ -19,12 +19,12 @@ public class Dado {
 		return this.face;
 	}
 	
-	public int getNlados() {
+	/*public int getNlados() {
 		
 		return this.Numerolados;
-	}
+	}*/
 	
-	public int rolar() {
+	public int rolar() { // rola o dado
 		
 		Random r = new Random();
 		this.face = (r.getIntRand(Numerolados));

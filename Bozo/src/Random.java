@@ -16,7 +16,7 @@ public class Random {
 	
 	public int getIntRand(int max){
 		double d = getRand() * max;
-		return (int) Math.abs(d) + 1;
+		return (int) Math.abs(d) + 1; // mudamos este método para gerar mais aleatoriedade;
 	}
 
 	public void setSemente(int semente) {
