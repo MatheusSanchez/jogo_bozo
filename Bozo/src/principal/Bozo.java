@@ -1,4 +1,10 @@
+package principal;
 import java.io.IOException;
+
+import entradaTeclado.EntradaTeclado;
+import excecoes.BozoException;
+import placar.Placar;
+import placar.RolaDados;
 
 public class Bozo {
 
@@ -39,15 +45,23 @@ public class Bozo {
 			System.out.println();
 			System.out.println();
 			System.out.println(placar.toString()); // placar atual
+			
 			System.out.print("Escolha a posição que quer ocupar com essa jogada ===> ");
-			addPlacar = EntradaTeclado.leInt();
 			
-			System.out.println();
-			System.out.println();
+			try {
+				addPlacar = EntradaTeclado.leInt();	
+				System.out.println();
+				System.out.println();
+				placar.add(addPlacar, pontDados); // adiciona os dados na posição digitada pelo usuario
+			}
+			catch (BozoException e) {	
+			    System.out.println(e);
+			}
+			catch (Exception e) {	
+			   System.out.println("Voce digitou algo que não é um número ! Perdeu a vez.");
+			}
 			
-			placar.add(addPlacar, pontDados); // adiciona os dados na posição digitada pelo usuario
 			System.out.println(placar.toString()); // printa o placar
-			
 			rodada++;
 		}
 		System.out.println("**************************************");

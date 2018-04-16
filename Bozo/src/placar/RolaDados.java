@@ -1,3 +1,5 @@
+package placar;
+import dado.Dado;
 
 public class RolaDados {
 	

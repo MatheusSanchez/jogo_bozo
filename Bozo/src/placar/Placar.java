@@ -1,5 +1,9 @@
+package placar;
 import java.io.IOException;
 import java.util.Arrays;
+
+import entradaTeclado.EntradaTeclado;
+import excecoes.BozoException;
 
 public class Placar {
 	
@@ -12,7 +16,7 @@ public class Placar {
 		}
 	}
 	
-	public void add(int posicao, int dados[]) throws java.lang.IllegalArgumentException, IOException{
+	public void add(int posicao, int dados[]) throws java.lang.IllegalArgumentException, IOException, BozoException{
 		posicao--;
 		int j, soma = 0;
 		
@@ -146,9 +150,12 @@ public class Placar {
 				}
 				
 			}else { // posição ocupada
-				System.out.println("Esta posição ja esta ocupada, lamento !");
+				
+		        throw new BozoException("Posição ocupada no placar");
+		        
+				/*System.out.println("Esta posição ja esta ocupada, lamento !");
 				System.out.println("Digite uma posição vazia !");
-				throw new IllegalArgumentException();
+				throw new IllegalArgumentException();*/
 			}
 			
 		}catch(java.lang.IllegalArgumentException e) {
