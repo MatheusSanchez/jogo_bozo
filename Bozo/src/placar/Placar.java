@@ -25,7 +25,7 @@ public class Placar {
 
 		}*/
 			
-		try{
+
 			if(this.tabuleiro[posicao] == -1) { // posições não ocupadas
 				
 				if(posicao < 6) {
@@ -87,8 +87,7 @@ public class Placar {
 						
 						if(tabuleiro[posicao] == 0) {
 							for (int i = 0; i < dados.length; i++) {  // sequencia 2
-								if(dados[i] != vet2
-										[i]) {
+								if(dados[i] != vet2[i]) {
 									tabuleiro[posicao] = 0;
 									break;
 								}else {
@@ -143,12 +142,7 @@ public class Placar {
 						}
 					}
 					
-				}else{ // posição não existente
-					System.out.println("Esta posição não existe no tabuleiro !");
-					System.out.println("Digite uma posição valida !");
-					throw new IllegalArgumentException();
 				}
-				
 			}else { // posição ocupada
 				
 		        throw new BozoException("Posição ocupada no placar");
@@ -158,11 +152,7 @@ public class Placar {
 				throw new IllegalArgumentException();*/
 			}
 			
-		}catch(java.lang.IllegalArgumentException e) {
-			posicao = EntradaTeclado.leInt();
-			this.add(posicao,dados); // retorna pra função em caso de exceções
-			return;
-		}
+		
 	}
 	
 	public int getScore(){ // pega os pontos do tabuleiro
