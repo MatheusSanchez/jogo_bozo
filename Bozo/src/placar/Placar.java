@@ -7,7 +7,7 @@ import excecoes.BozoException;
 
 public class Placar {
 	
-	int tabuleiro[] = new int[10]; // posiçoes do placar
+	public int tabuleiro[] = new int[10]; // posiçoes do placar
 	
 	public Placar(){
 		 // setando todas as posições nulas
