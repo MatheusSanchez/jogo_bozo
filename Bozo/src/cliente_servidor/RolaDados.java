@@ -1,4 +1,4 @@
-package placar;
+package cliente_servidor;
 import dado.Dado;
 
 public class RolaDados {

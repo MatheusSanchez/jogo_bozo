@@ -13,6 +13,7 @@ public class Cliente {
 	
 	static int countChar(String dados, int c) {
 		
+		
 		int count  = 0;
 		
 			for (int i = 0; i < dados.length(); i+=2) {
@@ -22,6 +23,37 @@ public class Cliente {
 			}
 				
 		return count;
+		
+	}
+	public static String troca_dados(String dados) {
+		String retorno = "T ";
+		String[] tmp;
+		tmp = dados.split(" ");
+		
+		for(int i = 0; i < 4 ;i++) {
+			int k = countChar(dados, (((int)(tmp[i].charAt(0))) - 48) );
+			
+			if(k >= 2){
+				retorno += "0 ";
+			}else {
+				retorno += "1 ";
+			}
+			
+		}
+		
+		int k = countChar(dados, (((int)(tmp[4].charAt(0))) - 48) );
+		
+		if(k >= 2){
+			retorno += '0';
+		}else {
+			retorno += '1';
+		}
+		//retorno += '\0';
+		
+		System.out.println("  Retorno " + retorno);
+		
+		return retorno;
+		
 		
 	}
 
@@ -154,6 +186,7 @@ public class Cliente {
 	
 	
 	
+	
 	public static void main(String[] args) throws IOException {
 		
 
@@ -180,22 +213,17 @@ public class Cliente {
 			
 			str_dados = server.nextLine(); // pega primeira string de dados
 			System.out.println("Dados da jogada " + str_dados + "\n"); // printa os dados	
-			pos_placar = calculaMaior(str_dados); // calcula qual é a melhor posicao para jogar
-			System.out.println("Melhor posicao " + pos_placar + "\n"); 
 			
-			saida.println("T 1 1 1 1 1"); // alteracao
+			
+			saida.println(troca_dados(str_dados)); // alteracao
 			str_dados = server.nextLine(); // pega os dados
-			System.out.println("Dados da jogada " + str_dados + "\n");
-			pos_placar = calculaMaior(str_dados);
-			System.out.println("Melhor posicao " + pos_placar + "\n");
+			System.out.println("Dados da jogada " + str_dados + "\n"); // printa os dados
+			saida.println(troca_dados(str_dados));	
 			
-			saida.println("T 1 1 1 1 1");			
 			str_dados = server.nextLine(); // ultimos dados gerados
 			System.out.println("Dados da jogada(ultimo) " + str_dados+ "\n");
 			pos_placar = calculaMaior(str_dados);
 			System.out.println("Melhor posicao " + pos_placar + "\n");
-			
-			pos_placar = calculaMaior(str_dados);
 			System.out.println("Colocando na posicao " + pos_placar + " do placar");
 			
 			saida.println("P"+i+" "+ pos_placar); // coloca no placar
